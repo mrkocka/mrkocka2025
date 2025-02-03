@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/fontawesome/css/all.min.css">
+    <title>Mr.Kocka | Személyes Oldalam</title>
+</head>
+
+<body>
+    <main>
+        <article class="container-my">
+            <!-- Bal oldal: fix menü -->
+            <article class="left-panel-my">
+                <img src="/img/peter24.webp" alt="mrkockaPortfolioKép">
+                <ul class="nav-list">
+                    <li class="<%= activeMenu === 'about' ? 'active' : '' %>"><a href="/mypage/about">Rólam</a></li>
+                    <li class="<%= activeMenu === 'services' ? 'active' : '' %>"><a
+                            href="/mypage/services">Szolgáltatásaim</a></li>
+                    <li class="<%= activeMenu === 'videos' ? 'active' : '' %>"><a href="/mypage/videos">Videók</a></li>
+                    <li class="<%= activeMenu === 'portfolio' ? 'active' : '' %>"><a
+                            href="/mypage/portfolio">Portfólió</a></li>
+                    <li class="<%= activeMenu === 'thanks' ? 'active' : '' %>"><a href="/mypage/thanks">Köszönöm</a>
+                    </li>
+                    <li class="<%= activeMenu === 'contact' ? 'active' : '' %>"><a href="/mypage/contact">Kapcsolat</a>
+                    </li>
+                </ul>
+                <ul class="soc-icon">
+                    <li><i class="fa-brands fa-facebook"></i></li>
+                    <li><i class="fa-brands fa-linkedin"></i></li>
+                    <li><i class="fa-brands fa-github"></i></li>
+                    <li><i class="fa-brands fa-tiktok"></i></li>
+                    <li><i class="fa-brands fa-youtube"></i></li>
+                </ul>
+                <p class="copy">COPYRIGHT ©2021 - 2025 Mr.Kocka</p>
+            </article>
+
+            <!-- Jobb oldal: dinamikus tartalom -->
+            <article class="right-panel-my">
+                <h1>
+                    <%- include(`partials/${content}`) %>
+                </h1>
+            </article>
+        </article>
+
+        <!-- Oldalsó navigáció -->
+        <nav class="side-nav">
+            <ul class="icon-lis">
+                <li class="<%= activeMenu === 'home' ? 'active' : '' %>">
+                    <a href="/" class="nav-icon" title="Kezdőlap"><i class="fa-solid fa-house"></i></a>
+                </li>
+                <li class="<%= activeMenu === 'about' ? 'active' : '' %>">
+                    <a href="/mypage/about" class="nav-icon" title="Személyes Oldalam"><i
+                            class="fa-solid fa-user"></i></a>
+                </li>
+                <li class="<%= activeMenu === 'portfolio' ? 'active' : '' %>">
+                    <a href="/mypage/portfolio" class="nav-icon" title="Portfólióm"><i
+                            class="fa-solid fa-images"></i></a>
+                </li>
+                <li class="<%= activeMenu === 'contact' ? 'active' : '' %>">
+                    <a href="/mypage/contact" class="nav-icon" title="Kapcsolat"><i
+                            class="fa-solid fa-envelope"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </main>
+    <script src="/js/pages.js"></script>
+</body>
+
+</html>

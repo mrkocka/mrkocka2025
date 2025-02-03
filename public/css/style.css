@@ -1,0 +1,345 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Ubuntu-Tit';
+    src: url(/fonts/Ubuntu-Italic.ttf);
+}
+
+
+@font-face {
+    font-family: 'Roboto-text';
+    src: url(/fonts/Roboto-Regular.ttf);
+}
+
+:root {
+    --main-bg: #87CEEB;
+    --main-nav: #2C3E50;
+    --main-buttonNlink: #32CD32;
+    --main-hover: #16A085;
+    --main-text-w: #FFFFFF;
+    --main-text-b: #2C3E50;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* Címsorok (h1, h2, h3) az Ubuntu betűtípussal */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Ubuntu-Tit', sans-serif;
+    font-weight: 700;
+    margin: 20px 0;
+    color: #333;
+
+}
+
+/* h1: Főcím */
+h1 {
+    font-size: 2.5rem;
+    /* Nagy méret */
+}
+
+/* h2: Alcím */
+h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    /* Kicsit kevésbé hangsúlyos */
+}
+
+/* h3: További szekciók */
+h3 {
+    font-size: 1.75rem;
+    font-weight: 400;
+
+}
+
+body {
+    font-family: 'Roboto-text', sans-serif;
+    font-weight: 400;
+    color: #555;
+    line-height: 1.6;
+    background-color: var(--main-bg);
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .1rem;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Bal oldal */
+.left-panel {
+    flex: 1;
+    max-width: 50%;
+}
+
+.left-panel h1 {
+    font-size: 2.5rem;
+    color: var(--main-text-b);
+}
+
+.left-panel h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--main-text-b);
+}
+
+.left-panel .highlight {
+    color: var(--main-hover);
+    /* Sárga kiemelés */
+}
+
+.left-panel p {
+    font-size: 1rem;
+    color: var(--main-text-b);
+    margin: 10px 0;
+}
+
+.left-panel .btn {
+    background-color: var(--main-buttonNlink);
+    color: var(--main-text-b);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+.btn a {
+    margin-top: 20px;
+}
+
+
+
+/* Jobb oldal */
+.right-panel {
+    flex: 1;
+    text-align: center;
+}
+
+.right-panel img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Oldalsó navigáció */
+.side-nav {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: var(--main-buttonNlink);
+    height: auto;
+    padding: 2rem .5rem;
+    z-index: 99999;
+}
+
+.icon-lis {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    list-style: none;
+    text-align: center;
+}
+
+.side-nav .nav-icon {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: var(--main-text-b);
+    padding: 10px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.side-nav .nav-icon:hover {
+    color: #fff;
+}
+
+.side-nav .icon-lis li.active a {
+    color: #fff;
+}
+
+/*-------------------------mypages.ejs alap stílusa--------------------------------------*/
+
+.left-panel-my {
+    width: 20vw;
+    height: 100vh;
+    background-color: var(--main-buttonNlink);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 99999;
+}
+
+
+.container-my {
+    display: flex;
+}
+
+.right-panel-my {
+    width: 80vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-panel-my img {
+    width: 20vw;
+    margin-bottom: 20px;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.nav-list li a {
+    font-size: 24px;
+    text-align: center;
+    font-family: 'Ubuntu-Tit';
+    color: var(--main-nav);
+    font-weight: bold;
+}
+
+.nav-list li a:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+
+.soc-icon {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.soc-icon i {
+    font-size: 30px;
+    color: var(--main-nav);
+    cursor: pointer;
+}
+
+.copy {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Roboto-text';
+    color: var(--main-nav);
+}
+
+.nav-list li.active a {
+    color: #fff;
+}
+
+.content-box {
+    background-color: red;
+    width: 80vw;
+    height: 100vh;
+    overflow: auto;
+    padding: 0 2rem;
+}
+
+/*-------------------------About Content--------------------------------------*/
+
+.about-content-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.about-content-box p {
+    font-size: 18px;
+}
+
+/*-------------------------Media Query--------------------------------------*/
+
+/*Főoldal*/
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .left-panel {
+        max-width: 500px;
+        text-align: center;
+
+    }
+
+    .right-panel img {
+        max-width: 80%;
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 646px) {
+    .side-nav {
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        width: 250px;
+        padding: 0;
+    }
+
+    .icon-lis {
+        display: flex;
+        flex-direction: row;
+        gap: 1.2rem;
+        list-style: none;
+        text-align: center;
+    }
+
+    .left-panel h2 {
+        margin-top: 2rem;
+    }
+
+    .left-panel h1 {
+        font-size: 2rem;
+        /* Címsor nagyobb méret */
+    }
+
+    .left-panel .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+
+}
